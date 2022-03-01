@@ -11,7 +11,8 @@ Stack:
 
 ## How to start
 
-``` yarn install
+``` 
+    yarn install
     cd client
     yarn start
 ```
