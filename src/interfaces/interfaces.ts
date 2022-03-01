@@ -18,3 +18,14 @@ export interface IArrayItems {
 export interface IProps {
     readonly children?: ReactNode,
 }
+
+export interface ICartItems {
+    id: number,
+    make: string,
+    model: string,
+    price: number,
+}
+
+export interface IStyledProps {
+    readonly  visible?: boolean,
+}

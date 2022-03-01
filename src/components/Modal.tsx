@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
-
+import { CartContext } from '../context/cartContext';
+import {IStyledProps} from '../interfaces/interfaces'
 interface IModal {
     item: {
         readonly name: string,
+        readonly cars_vehicles__id: number,
         readonly location_lat: number,
         readonly location_long: number,
         readonly cars_location: string,
@@ -15,9 +18,7 @@ interface IModal {
     clickHandler: () => void,
 }
 
-interface IStyledProps {
-    readonly  visible?: boolean,
-}
+
 
 const Container = styled.div<IStyledProps>`
     width: 100%;
@@ -58,7 +59,7 @@ const InnerCoitainer = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 999;
-color: #ffffff;
+    color: #ffffff;
 
 `
 
@@ -121,7 +122,19 @@ transition-duration:  .3s;
 
 
 const Modal = ({item, visibility, clickHandler}: IModal) => {
-    const url = `https://www.google.com/maps/@${item.location_lat},${item.location_lat}`
+
+    const {setCart} = useContext(CartContext);
+
+    const handleAdd = () => {
+        const products = {
+            id: item.cars_vehicles__id,
+          make: item.cars_vehicles_make,
+          model: item.cars_vehicles_model,
+          price: item.cars_vehicles_price,
+        }
+        setCart((currentState: []) => [...currentState, products])
+      }
+      
     return(
         <Container visible={visibility}>
             <InnerCoitainer>
@@ -136,7 +149,7 @@ const Modal = ({item, visibility, clickHandler}: IModal) => {
             <p>Lat: {item.location_lat}</p>
             <p>Long: {item.location_long}</p>
             <ButtonStyled onClick={clickHandler}>X</ButtonStyled>
-            <AddToCartButton onClick={clickHandler}>Add to cart</AddToCartButton>
+            <AddToCartButton onClick={handleAdd}>Add to cart</AddToCartButton>
             </InnerCoitainer>
         </Container>
     )

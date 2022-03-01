@@ -63,7 +63,7 @@ const ButtonStyled = styled.button`
     }
 `
 
-const CartItems = ({item}: IProps) => {
+const CarsItems = ({item}: IProps) => {
   const [isVisible, setIsVisible] = useState<boolean | any>(false)
 
     return(
@@ -79,4 +79,4 @@ const CartItems = ({item}: IProps) => {
     )
 }
 
-export default CartItems;
+export default CarsItems;
