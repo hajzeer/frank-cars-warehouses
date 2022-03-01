@@ -1,4 +1,4 @@
-import { useContext} from "react"
+import { useContext, useEffect, useState} from "react"
 import CartList from "./CartList"
 import { CartContext } from "../context/cartContext"
 import {IStyledProps} from '../interfaces/interfaces'
@@ -57,7 +57,13 @@ const CartComponent = ({visibility}: IProps) => {
     const {cart} = useContext(CartContext);
 
     const calculateTotal = (items: any) =>
-    items.reduce((total: number, item: any) => total + item.price, 0);
+    items.reduce((total: number, items: any) => total + Number(items.price), 0);
+
+    useEffect(() =>{
+
+
+    })
+
 
 
 
@@ -72,7 +78,7 @@ const CartComponent = ({visibility}: IProps) => {
                     </p>
                 ) : (
                     <p>
-                    {parseFloat(calculateTotal(cart)).toFixed(2)} PLN
+                    {calculateTotal(cart).toFixed(2)} PLN
                     </p>
                 )}
             </div>

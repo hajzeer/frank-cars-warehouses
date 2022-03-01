@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Frank's warehouse
 
 Warehouse for cars dealer Frank with shopping funcs
@@ -11,8 +13,8 @@ Stack:
 
 ## How to start
 
-``` 
-    yarn install
+```
+    npm install
     cd client
     yarn start
 ```
