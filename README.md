@@ -4,10 +4,10 @@ Warehouse for cars dealer Frank with shopping funcs
 
 Stack:
 
--TypeScript
--React
--Axios
--Styled-Components
+- TypeScript
+- Ract
+- Axios
+- Styled-Components
 
 ## How to start
 
