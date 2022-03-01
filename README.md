@@ -2,7 +2,7 @@
 
 Warehouse for cars dealer Frank with shopping funcs
 
-## Firstly you need to start server [https://github.com/hajzeer/frank-cars-warehouses-server]
+### Firstly you need to start server [here](https://github.com/hajzeer/frank-cars-warehouses-server)
 
 Stack:
 
